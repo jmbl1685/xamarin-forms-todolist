@@ -12,7 +12,7 @@ namespace ToDoList.Core.Views
         public ToDoList()
         {
             InitializeComponent();
-            TodoListLoad();
+            TodoListLoad(); 
         }
 
         protected override async void OnAppearing()
@@ -24,9 +24,11 @@ namespace ToDoList.Core.Views
         private async void TodoListLoad()
         {
             listView.ItemsSource = await RepositoryFactory.GetToDoRepository().GetAsync();
+
         }
         private async void OnItemAdded(object sender, EventArgs e)
         {
+
             await Navigation.PushAsync(new ToDoHome()
             {
                 BindingContext = new ToDoItem()
@@ -38,7 +40,7 @@ namespace ToDoList.Core.Views
             if (e.SelectedItem != null)
             {
                 var toDoItem = e.SelectedItem as ToDoItem;
-                await Navigation.PushAsync(new ToDoHome()
+                await Navigation.PushAsync(new ToDoHome(true)
                 {
                     BindingContext = toDoItem
                 });

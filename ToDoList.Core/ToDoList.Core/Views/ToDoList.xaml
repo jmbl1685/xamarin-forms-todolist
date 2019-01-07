@@ -3,6 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToDoList.Core.Views.ToDoList">
 
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="10">
+            <Image Source="icon.png"></Image>
+            <Label Text="ToDoList" FontSize="16" TextColor="White" VerticalTextAlignment="Center" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+
     <ContentPage.ToolbarItems x:Uid="toolbarItems">
         <ToolbarItem Text="+" Clicked="OnItemAdded">
             <ToolbarItem.Icon>
@@ -20,6 +28,7 @@
                     <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
                         <Image Source="check.png" HorizontalOptions="End" IsVisible="{Binding Done}" />
+                        
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

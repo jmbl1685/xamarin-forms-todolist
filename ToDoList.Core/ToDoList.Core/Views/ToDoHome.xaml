@@ -12,6 +12,7 @@
         <Label Text="Done" />
         <Switch IsToggled="{Binding Done}" />
         <Button Text="Save" Clicked="OnSaveClicked" />
+        <Button x:Name="DeleteButton"  Text="Delete" Clicked="OnDeleteClicked" IsVisible="False" />
     </StackLayout>
 
 </ContentPage>
