@@ -19,8 +19,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Home.xaml.cs">
-      <DependentUpon>Home.xaml</DependentUpon>
+    <Compile Update="Views\ToDoHome.xaml.cs">
+      <DependentUpon>ToDoHome.xaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ToDoList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

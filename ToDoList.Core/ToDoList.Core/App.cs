@@ -15,10 +15,11 @@ namespace ToDoList.Core
             if (connection == null)
             {
                 var path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-                var sqliteFile = Path.Combine(path, "TodoSQLite.db3");
+                var sqliteFile = Path.Combine(path, "ToDoSQLiteData.db3");
                 DBConnection.Connect(sqliteFile);
             }
-            MainPage = new NavigationPage(new Home());
+            MainPage = new NavigationPage(
+                new ToDoList.Core.Views.ToDoList());
         }
 
 
